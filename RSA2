@@ -1,0 +1,21 @@
+#!/bin/python
+
+from pwn import *
+
+pr = process("/challenge/run")
+
+pr.recvuntil(b"e = 0x")
+e = int(pr.recvline().strip().decode(), 16)
+
+pr.recvuntil(b"p = 0x")
+p = int(pr.recvline().strip().decode(), 16)
+
+pr.recvuntil(b"q = 0x")
+q = int(pr.recvline().strip().decode(), 16)
+
+pr.recvuntil(b"Flag Ciphertext (hex): ")
+flag = int(pr.recvline().strip().decode(), 16)
+
+pt = pow(flag, e, p*q)
+
+print(pt)
