@@ -1,0 +1,4 @@
+Pri analýze výzvy /challenge/cimg som sa zameral na interpretáciu bajtov.
+V zadaní sa nachádzal hexadecimálny kód, ktorý po dekódovaní do ASCII obsahoval slovo „little“. To naznačovalo, že systém používa little-endian zápis dát.
+Na základe toho som číselné hodnoty zapísal do súboru v správnom (little-endian) poradí bajtov.
+Vďaka tomu boli dáta korektne interpretované a úloha bola úspešne vyriešená – výsledkom bolo získanie flagu.
