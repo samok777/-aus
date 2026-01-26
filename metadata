@@ -1,0 +1,8 @@
+#!/bin/python
+
+with open("example.cimg", "wb") as file:
+    file.write(b"CMag")
+    file.write((1).to_bytes(1, "little"))
+    file.write((62).to_bytes(4, "little"))
+    file.write((23).to_bytes(4, "little"))
+    file.write(b"W" * (62 * 23))
