@@ -1,0 +1,5 @@
+#!/bin/python
+
+with open("example.cimg", "wb") as file:
+  file.write(b"(Nmg")
+  file.write((116).to_bytes(8, "little"))
